@@ -1,0 +1,7 @@
+
+version: '3'
+services:
+  project-tracking-system-web-frontend-app-container:
+    image: selimhorri/project-tracking-system-web-frontend-app
+    ports:
+      - 4200:4200
