@@ -35,7 +35,11 @@ export class EmployeeService {
   public deleteById(employeeId: number): Observable<boolean> {
     return this.http.delete<boolean>(`${this.apiUrl}/${employeeId}`);
   }
-
-
-
+  
+  public findByUsername(username: string): Observable<Employee> {
+    return this.http.get<Employee>(`${this.apiUrl}/username/${username}`);
+  }
+  
+  
+  
 }

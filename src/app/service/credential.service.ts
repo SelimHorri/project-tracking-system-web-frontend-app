@@ -35,6 +35,10 @@ export class CredentialService {
   public deleteById(credentialId: number): Observable<boolean> {
     return this.http.delete<boolean>(`${this.apiUrl}/${credentialId}`);
   }
+  
+  public findByUsername(username: string): Observable<Credential> {
+    return this.http.get<Credential>(`${this.apiUrl}/username/${username}`);
+  }
 
 
 

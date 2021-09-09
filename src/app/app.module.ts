@@ -15,12 +15,14 @@ import { LocationService } from './service/location.service';
 import { ProjectService } from './service/project.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './component/error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
