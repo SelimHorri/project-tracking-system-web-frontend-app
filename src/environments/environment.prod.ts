@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: "https://project-tracking-system-heroku.herokuapp.com/app"
+  API_URL: "https://project-tracking-system-heroku.herokuapp.com/app/api"
 };
