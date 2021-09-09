@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
           },
           (error: HttpErrorResponse) => {
             console.log(error.message);
+            alert(error?.message);
           }
         );
   }

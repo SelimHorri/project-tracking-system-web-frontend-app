@@ -23,12 +23,13 @@
                             <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)" >
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input class="form-control form-control-lg" type="text" ngModel name="username"
+                                    <input class="form-control form-control-lg" type="text" [ngModel] #usernameField="ngModel" required name="username"
                                         placeholder="Enter your username">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="form-control form-control-lg" type="password" ngModel name="password"
+                                    <input class="form-control form-control-lg" type="password" [ngModel]
+                                        #passwordField="ngModel" required name="password"
                                         placeholder="Enter your password">
                                     <!--
                                     <small>
