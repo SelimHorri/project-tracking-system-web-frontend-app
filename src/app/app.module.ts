@@ -16,19 +16,25 @@ import { ProjectService } from './service/project.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './component/error/error.component';
+import { LogoutComponent } from './component/logout/logout.component';
+import { RouterModule } from '@angular/router';
+import { EmployeeIndexComponent } from './component/employee/employee-index/employee-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    LogoutComponent,
+    EmployeeIndexComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     AssignmentService,
