@@ -1,3 +1,4 @@
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationRequest } from 'src/app/model/dto/authentication-request';
@@ -11,9 +12,6 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 })
 export class LoginComponent implements OnInit {
   
-  public username!: string;
-  public password!: string;
-  
   constructor(private authenticationService: AuthenticationService) {
     
   }
@@ -23,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
   
   public onLogin(authenticationRequest: AuthenticationRequest): void {
+    authenticationRequest.username = authenticationRequest.username.toLowerCase().trim();
     this.authenticationService.authenticate(authenticationRequest)
         .subscribe(
           (authenticationResponse: AuthenticationResponse) => {
@@ -31,14 +30,14 @@ export class LoginComponent implements OnInit {
               alert('Problem user not eligible: ' + authenticationResponse.isEligible);
             }
             else {
-              alert(`hello friend ${authenticationResponse.username.toUpperCase()}`);
+              alert(`hello friend ${authenticationResponse.username}`);
               // sessionStorage.setItem("username", authenticationResponse.username);
             }
             
           },
           (error: HttpErrorResponse) => {
             console.log(error.message);
-            alert(error?.message);
+            alert(error.message);
           }
         );
   }

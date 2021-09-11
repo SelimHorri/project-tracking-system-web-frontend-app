@@ -21,6 +21,10 @@ export class AuthenticationService {
     return this.http.post<AuthenticationResponse>(`${this.apiUrl}`, authenticationRequest);
   }
   
+  public isLoggedIn(): void {
+    
+  }
+  
   
   
 }
