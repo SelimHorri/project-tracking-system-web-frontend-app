@@ -22,6 +22,13 @@ export class LoginComponent implements OnInit {
     
   }
   
+  public isAuthenticated(): boolean {
+    if (this.authenticationService.isLoggedIn())
+      return true;
+    // navigate to home
+    return false;
+  }
+  
   public onLogin(authenticationRequest: AuthenticationRequest): void {
     authenticationRequest.username = authenticationRequest.username.toLowerCase().trim();
     this.authenticationService.authenticate(authenticationRequest)

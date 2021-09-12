@@ -1,7 +1,14 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class="container">
+<div *ngIf="!isAuthenticated()" class="container" >
+  
+  <h1 class="text-danger">NOT_ATHENTICATED</h1>
+  <a routerLink="/ng-app/login" >Login?</a>
+  
+</div>
+
+<div *ngIf="isAuthenticated()" class="container">
   <div class="row">
     <div class="col-xl-3 col-md-6">
       <div class="card bg-pattern">
